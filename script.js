@@ -1,10 +1,13 @@
 const form = document.querySelector('.nameForm');
+
 let player1Name;
 let player2Name;
+
 form.addEventListener("submit", (e) => {
     player1Name = document.querySelector('.player1Name')?.value;
     player2Name = document.querySelector('.player2Name')?.value;
-    gameBoard.setPlayers(player1Name, player2Name)
+    gameBoard.setPlayers(player1Name, player2Name);
+    gameBoard.displayBoard();
     document.querySelector('.player1Name').value = '';
     document.querySelector('.player2Name').value = '';            
     e.preventDefault();
@@ -36,6 +39,7 @@ const gameBoard = {
         }
         if(this.cells.every(cell => cell !== '')){
             console.log("It's a draw! ");
+            this.nextRound();
             return
         }
         if(this.cells[index] != ''){
@@ -79,11 +83,28 @@ const gameBoard = {
     },
     nextRound: function(){
         this.cells = ['', '', '', '', '', '', '', '', ''];
-        if(this.winner === this.players.player1.symbol){
-            this.players.player1.giveScore();
+        if(this.winner === this.player1.symbol){
+            this.player1.giveScore();
+        }else if(this.winner === this.player2.symbol){
+            this.player2.giveScore();
         }else{
-            this.players.player2.giveScore();
+            console.log('starting new game...')
         }
+        this.displayBoard();
+    },
+    displayBoard: function(){
+        const board = document.querySelector('.board');
+        board.innerHTML = '';
+        this.cells = ['', '', '', '', '', '', '', '', ''];
+        this.cells.forEach((cell, i) => {
+            const Cell = document.createElement("button");
+            Cell.classList.add("cell");
+            Cell.addEventListener("click", () => {
+                Cell.textContent = `${this.currentPlayer}`
+                this.playGame(i);
+            });
+            board.appendChild(Cell)   
+        });
     }
 }
 
