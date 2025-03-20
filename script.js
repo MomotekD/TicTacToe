@@ -1,7 +1,25 @@
+const form = document.querySelector('.nameForm');
+let player1Name;
+let player2Name;
+form.addEventListener("submit", (e) => {
+    player1Name = document.querySelector('.player1Name')?.value;
+    player2Name = document.querySelector('.player2Name')?.value;
+    gameBoard.setPlayers(player1Name, player2Name)
+    document.querySelector('.player1Name').value = '';
+    document.querySelector('.player2Name').value = '';            
+    e.preventDefault();
+})
+
 const gameBoard = {
     currentPlayer: 'X',
     cells: ['', '', '', '', '', '', '', '', ''],
     winner: null,
+    player1: null,
+    player2: null,
+    setPlayers: function (name1, name2){
+        this.player1 = this.player(name1 || "Player 1", "X");
+        this.player2 = this.player(name2 || "Player 2", "O");
+    },
     player: function player(Name, Symbol){
         const name = Name;
         const symbol = Symbol;
@@ -61,17 +79,13 @@ const gameBoard = {
     },
     nextRound: function(){
         this.cells = ['', '', '', '', '', '', '', '', ''];
-        if(this.winner === player1.symbol){
-            player1.giveScore();
+        if(this.winner === this.players.player1.symbol){
+            this.players.player1.giveScore();
         }else{
-            player2.giveScore();
+            this.players.player2.giveScore();
         }
     }
 }
 
-
-
-const player1 = gameBoard.player(`Momotek`, "X");
-const player2 = gameBoard.player(`Momotek2`, "O");
 
 
