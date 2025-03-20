@@ -12,6 +12,14 @@
         <h1 class="headerCaption">Tic Tac Toe</h1>
     </div>
     <div class="MainContainer">
+        <div class="scoreBoard">
+            <div class="Score">
+                <h3 class="player1Score">Player 1 score:</h3>
+            </div>
+            <div class="Score">
+                <h3 class="player2Score">Player 2 score:</h3>
+            </div>
+        </div>
         <div class="boardContainer">
             <div class="board">
 
@@ -19,8 +27,8 @@
         </div>
         <div class="buttonsAndForm">
             <div class="btns">
-                <button>Start</button>
-                <button>Reset</button>
+                <button onclick="gameBoard.displayBoard()">Start</button>
+                <button onclick="gameBoard.reset()">Reset</button>
             </div>
             <form class="nameForm">
                 <label for="player1">Player one name: </label>
