@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>  
     <div class="header">
         <h1 class="headerCaption">Tic Tac Toe</h1>
     </div>
     <div class="MainContainer">
-        <div class="cells">
+        <div class="board">
 
         </div>
         <div class="buttonsAndForm">
@@ -19,12 +20,12 @@
                 <button>Start</button>
                 <button>Reset</button>
             </div>
-            <form>
-                <label for="player1">PLayer one name: </label>
+            <form class="nameForm">
+                <label for="player1">Player one name: </label>
                 <input type="text" class="player1Name" name="player1">
                 <label for="player2">Player two name: </label>
                 <input type="text" class="player2Name" name="player2">
-                <button type="submit">Submit</button>
+                <button type="submit" class="submitBtn">Submit</button>
             </form>
         </div>
     </div>
