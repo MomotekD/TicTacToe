@@ -2,7 +2,9 @@
 
 :root{
     --primary-color: rgb(55, 156, 223);
+    --primary-color-hover: rgb(66, 179, 255);
     --secondary-color: rgb(255, 255, 255);
+    --cell-size: 8vw;
 }
 
 * {
@@ -31,10 +33,10 @@ button {
 }
 
 button:hover {
+    cursor: pointer;
     transition: 300ms;
     padding-inline: 3.5vw;
     padding-block: 1.5vh;
-    cursor: pointer;
 }
 
 
@@ -51,7 +53,7 @@ button:hover {
     color: var(--secondary-color);
     padding-inline: 10vw;
     padding-block: 2vh;
-    border-radius: 16px ;
+    border-radius: 16px;
 }
 
 .submitBtn{
@@ -65,4 +67,41 @@ button:hover {
 
 label{
     margin-left: 2vw;
+}
+
+.boardContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.board {
+    display: grid;
+    margin-top: 5vh;
+    grid-template-columns: repeat(3, 8vw);
+    row-gap: 1.5vh;
+    column-gap: 1.5vw;
+}
+
+.cell {
+    background-color: var(--primary-color);
+    width: var(--cell-size);
+    height: var(--cell-size);
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    transition: 300ms;
+}
+
+.cell:hover{
+    transition: 300ms;
+    padding: 0;
+    background-color: var(--primary-color-hover);
+}
+
+input {
+    border-radius: 16px;
+    border: none;
 }
