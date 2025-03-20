@@ -41,7 +41,7 @@ button:hover {
 
 
 .btns {
-    margin-block: 5vh;
+    margin-block: 4vh;
 }
 
 .buttonsAndForm {
@@ -104,4 +104,18 @@ label{
 input {
     border-radius: 16px;
     border: none;
+}
+
+.scoreBoard{
+    display: flex;
+    margin-block: 5vh;
+    justify-content: space-between;
+    margin-inline: 10vw;
+}
+
+.Score{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 16px;
+    padding: 1vh 8vw;
 }
