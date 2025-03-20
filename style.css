@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --primary-color: rgb(55, 156, 223);
+    --secondary-color: rgb(255, 255, 255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.header {
+    padding-block: 5vh;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    border-radius: 16px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding-inline: 3vw;
+    padding-block: 1vh;
+    margin-inline: 2vw;
+    transition: 400ms;
+}
+
+button:hover {
+    transition: 300ms;
+    padding-inline: 3.5vw;
+    padding-block: 1.5vh;
+    cursor: pointer;
+}
+
+
+.btns {
+    margin-block: 5vh;
+}
+
+.buttonsAndForm {
+    justify-items: center;
+}
+
+.nameForm {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding-inline: 10vw;
+    padding-block: 2vh;
+    border-radius: 16px ;
+}
+
+.submitBtn{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.submitBtn:hover{
+    background-color: rgb(248, 248, 248);
+}
+
+label{
+    margin-left: 2vw;
+}
