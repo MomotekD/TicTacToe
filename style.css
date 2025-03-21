@@ -41,7 +41,9 @@ button:hover {
 
 
 .btns {
+    display: flex;
     margin-block: 4vh;
+    justify-content: center;
 }
 
 .buttonsAndForm {
